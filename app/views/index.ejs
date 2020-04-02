@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+
+    <link type="text/css" rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="/css/uploadPage.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="/js/parsley.min.js"></script>
+    <script type="module" src="/js/uploadImage.js"></script>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <% include ./partials/header %>
+
+    <!-- Page content -->
+    <div class="container-fluid p-0">
+        <div class="row d-flex justify-content-center">
+            <div class="col-10 col-lg-6 col-md-10 col-sm-10 col-xs-10">
+
+                <h1 class="margin-lg-bottom margin-lg-top"> Upload New Item </h1>
+
+                <form name="pastProject">
+
+                    <label for="descr-input margin-lg-top">Short Description</label>
+                    <input type="text" class="form-control" name="" id="descr-input" aria-describedby="helpId"
+                        placeholder="Short Description" maxlength="60">
+                    <small id="helpId" class="form-text text-muted margin-lg-bottom">Provide a short desription of this
+                        item</small>
+
+                    <label for="price-input">Price</label>
+                    <input name="price" type="number" min="0.01" step="0.01" id="price-input" aria-describedby="helpId"
+                        placeholder="Rands">
+                    <small id="helpId" class="form-text text-muted margin-lg-bottom">Enter the price of this item in
+                        Rands</small>
+
+                    <label for="upload-img-btn">Upload an image file</label>
+                    <input type="file" class="form-control-file margin-lg-bottom" id="upload-img-input" aria-describedby="fileHelpId" required>
+
+                    <input name="" id="submit-btn" class="btn btn-success" type="button" value="Submit"> 
+                    <input name="" id="cancel-btn" class="btn btn-danger" type="button" value="Cancel" >
+                </form>
+            </div>
+        </div>
+
+        <div class="row d-flex justify-content-center">
+            <div class="col-10 col-lg-6 col-md-10 col-sm-10 col-xs-10">
+                <a class="btn btn-dark margin-lg-bottom margin-lg-top" href="/preview/gallery" role="button">Click to preview gallery</a>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

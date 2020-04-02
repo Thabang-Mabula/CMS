@@ -1,0 +1,61 @@
+<HTML>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> El Olam Fashion </title>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/gallery.css">
+</head>
+
+<body>
+   <!-- Navbar -->
+   <% include ./partials/header %>
+
+    <div class="container-fluid p-0">
+        <div class="row">
+            <div class="col-lg-6 col-sm-8 col-10">
+                <div class="about-me-heading-container">
+                    <h1 class="about-me-heading"> <%- title %> </h1>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-4 col-2">
+
+            </div>
+
+        </div>
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-10">
+                <div class="about-me-body body-text">
+                    Click on any image to view it in full-size through the interactive photo gallery.
+                </div>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-10">
+                <ul class="img-list" id="ul-li">
+                    <% items.forEach(function(item){ %>
+                        <li class="img-list-item reactive-img-spacing" data-src="<%= item.imgUrl %>">
+                            <img class="thumbnail reactive-img-height" src="<%= item.imgUrl %>" />
+                            <p class="item-descr margin-sm-top"> <%- String(item.descr).replace(/['"]+/g, '') %> </p>
+                            <p class="item-price"> R <%= Number(item.price).toFixed(2) %> </p>
+                            <a name="" id="" class="btn btn-danger" role="button" style="color: white"> Delete Post </a>
+                        </li>
+                    <% }); %>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/lg-thumbnail.min.js"></script>
+    <script src="/js/lg-fullscreen.min.js"></script>
+    <script src="/js/gallery.js"></script>
+</body>
+
+</HTML>

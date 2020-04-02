@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css?family=Old+Standard+TT&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poiret+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+:root {
+    --content-heading-font: 'Poiret One', cursive;
+    --text-body-font: 'Quicksand', sans-serif;
+    --text-body-color: rgb(38, 38, 38);
+    --brand-name-font: 'Old Standard TT', serif;
+    --off-white-color: #fefeff;
+    --blue-color: rgb(2, 2, 14);
+}
+
+html, body {
+    width: 100vw;
+    margin: 0;
+    background-color: var(--off-white-color);
+    font-size: calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
+    overflow-x: hidden;
+}
+
+.bg-off-white {
+    background-color: var(--off-white-color);
+}
+
+.container-fluid {
+    /* margin-right: -15px; */
+    padding: 0px;
+}
+
+/* Icon 1 */
+
+.container {
+    /* height: 100% */
+}
+
+.row {
+    padding: 0px;
+    /* height: 70%; */
+}
+
+.col-lg-12 {
+    padding: 0px;
+}
+
+@media screen and (orientation: landscape) {
+    .landing-image {
+        background: url('/images/sewing-machine-gold-landscape.jpg') no-repeat;
+        /* background-size: cover; */
+        background-position: left bottom;
+        background-size: 100% auto;
+        height: 75vh;
+        width: 100%;
+    }
+}
+
+@media screen and (orientation: portrait) {
+    .landing-image {
+        background: url('/images/sewing-machine-gold-portrait.jpg') no-repeat;
+        /* background-size: cover; */
+        background-position: left bottom;
+        background-size: 100% auto;
+        height: 75vh;
+        width: 100%;
+    }
+}
+
+.company-name {
+    margin-top: 21.3vw;
+    margin-left: 10vw;
+    font-family: 'Old Standard TT', serif;
+    color: var(--off-white-color);
+    font-size: 6em;
+    line-height: 1em;
+    z-index: 2;
+    position: absolute;
+}
+
+.company-slogan {
+    font-family: 'Old Standard TT', serif;
+    color: rgb(38, 38, 38);
+    font-size: 1.8em;
+    line-height: 1.5em;
+    text-align: center;
+    padding-top: 5vh;
+    letter-spacing: 2px;
+    width: 100%;
+    padding-left: 10vw;
+    padding-right: 10vw;
+}
+
+.about-row {
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+}
+
+.benefits-row {
+    margin-bottom: 2vh;
+}
+
+.contact-us-heading-container {
+    /* background-color: rgb(2, 2, 14); */
+    /* width: 100%; */
+    text-align: center;
+    padding-bottom: 4vh;
+}
+
+.contact-us-row {
+    background-color: rgb(240, 240, 240);
+    padding-bottom: 10vh;
+    padding-top: 10vh;
+}
+
+.about-me-heading-container {
+    background-color: rgb(2, 2, 14);
+    /* width: 50vw; */
+    padding-left: 20vw;
+    padding-top: 1vh;
+    padding-bottom: 2.5vh;
+    /* background-image: url('/images/fabric.jpg'); */
+    /* background-size: cover; */
+    /* height: 10vh; */
+    margin-bottom: 5vh;
+    margin-top: 10vh;
+    /* padding-top: 5vh; 
+    padding-bottom: 5vh; */
+}
+
+.about-me-heading {
+    font-family: var(--content-heading-font);
+    /* color: white; */
+    color: white;
+    font-size: 2.3em;
+}
+
+.about-me-body {
+    padding-left: 10vw;
+    padding-right: 15vw;
+    margin-bottom: 10vh;
+}
+
+.body-text {
+    font-family: var(--text-body-font);
+    color: var(--text-body-color);
+    /* color: white; */
+    font-size: 1.2em;
+    text-justify: newspaper;
+}
+
+.ad-qualities-text {
+    font-family: var(--text-body-font);
+    font-weight: bold;
+    font-size: 1em;
+    text-align: center;
+    margin-bottom: 5vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+
+.advert-image {
+    margin-top: 2vw;
+    width: auto;
+    height: 15vh;
+}
+
+.contact-detail-text-field, .contact-detail-text-field:focus {
+    width: 100%;
+    margin-top: 6vh;
+    margin-bottom: 8vh;
+    border: none;
+    border-bottom: 2px solid rgb(2, 2, 14);
+    box-shadow: none;
+    text-align: center;
+    background-color: transparent;
+    font-family: var(--text-body-font);
+    border-radius: 0px;
+}
+
+.contact-us-heading {
+    font-family: var(--content-heading-font);
+    /* color: white; */
+    color: rgb(2, 2, 14);
+    font-size: 2.3em;
+}
+
+.product-description {
+    resize: none;
+    margin-top: 6vh;
+    min-height: 40vh;
+    width: 100%;
+    font-family: var(--text-body-font);
+    border-radius: 0px;
+}
+
+.submit-btn {
+    margin-top: 6vh;
+    font-size: 1.3em;
+    font-family: var(--text-body-font)
+}
+
+.page-footer {
+    padding-top: 5vh;
+    background-color: rgb(2, 2, 14);
+    color: white;
+    width: 100vw;
+    font-family: var(--content-heading-font);
+}
+
+.contact-icon {
+    height: 5vh;
+    margin-right: 2vw;
+}
+
+.contact-list {
+    list-style-type: none;
+    line-height: 3.5em;
+}
+
+.contact-list-link, .contact-list-link:focus, .contact-list-link:visited, .contact-list-link:hover, .contact-list-link:active {
+    text-decoration: none;
+    color: var(--text-body-color);
+    font-family: var(--text-body-font);
+    font-size: 1.1em;
+}
+
+.brand-name-font {
+    font-family: var(--brand-name-font);
+}
+
+.nav-item {
+    font-family: var(--text-body-font);
+}
+
+.margin-lg-top {
+    margin-top: 10vh;
+}
+
+.margin-lg-bottom {
+    margin-bottom: 10vh;
+}
+
+.margin-md-top {
+    margin-top: 6vh;
+}
+
+.margin-md-bottom {
+    margin-bottom: 6vh;
+}
+
+.margin-sm-top {
+    margin-top: 3vh;
+}
+
+.margin-sm-bottom {
+    margin-bottom: 3vh;
+}
+
+.col-lg-12 {
+    margin: 0px;
+}
+
+.specialising-list {
+    line-height: 2.5em;
+    padding-left: 2.5em;
+}
+
+.specialising-sub-list {
+    line-height: 1.4em;
+}
+
+.benefits-list {
+    list-style-type: none;
+    line-height: 2.5em;
+}
+
+.partial-underline {
+    border-bottom: 0.1em solid var(--blue-color);
+}
+
+.spec-btn {
+    pointer-events: none;
+    cursor: not-allowed;
+    background-color: rgb(140, 140, 140);
+    color: var(--off-white-color);
+    border-radius: 100%;
+    width: 10em;
+    height: 10em;
+    font-family: var(--text-body-font);
+    margin-bottom: 3em;
+    /* box-shadow: 0em 0em 0.5em rgba(126, 126, 126, 0.3); */
+}
+
+.spec-btn-alt {
+    pointer-events: none;
+    cursor: not-allowed;
+    width: 10em;
+    height: 10em;
+    border: 0.3em solid rgb(140, 140, 140);
+    background-color: var(--off-white-color);
+    border-radius: 100%;
+    /* font-size: 1em; */
+    /* box-shadow: 0em 0em 0.5em rgba(126, 126, 126, 0.3); */
+}
+
+.spec-btn:active, .spec-btn:visited, .spec-btn:focus {
+    border-color: none !important;
+    box-shadow: none;
+}
+
+.transition {
+    /* -webkit-transition: left 0.3s ease-out; */
+    /* Chrome 1-25, Safari 3.2+ */
+    /* -moz-transition: left 0.3s ease-out; */
+    /* Firefox 4-15 */
+    /* -o-transition: left 0.3s ease-out; */
+    /* Opera 10.50–12.00 */
+    /* transition: left 0.3s ease-out; */
+    /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
+}
+
+.error-msg {
+    color: red;
+    text-align: center;
+}
+
+.footer-hyperlink:hover, .footer-hyperlink:active, .footer-hyperlink:visited {
+    color: white
+}
+
+.icon-provider-info, .icon-provider-info:active, .icon-provider-info:hover, .icon-provider-info:visited { 
+    color: rgb(201, 201, 201)
+}
