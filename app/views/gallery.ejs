@@ -10,8 +10,8 @@
 </head>
 
 <body>
-   <!-- Navbar -->
-   <% include ./partials/header %>
+    <!-- Navbar -->
+    <% include ./partials/header %>
 
     <div class="container-fluid p-0">
         <div class="row">
@@ -26,31 +26,61 @@
 
         </div>
         <div class="row d-flex justify-content-center">
-            <div class="col-lg-10">
-                <div class="about-me-body body-text">
-                    Click on any image to view it in full-size through the interactive photo gallery.
-                </div>
+            <div class="col-lg-2">
+                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modelId">
+                    Upload item
+                </button>            
             </div>
         </div>
         <div class="row d-flex justify-content-center">
             <div class="col-lg-10">
                 <ul class="img-list" id="ul-li">
                     <% items.forEach(function(item){ %>
-                        <li class="img-list-item reactive-img-spacing" data-src="<%= item.imgUrl %>">
-                            <img class="thumbnail reactive-img-height" src="<%= item.imgUrl %>" />
-                            <p class="item-descr margin-sm-top"> <%- String(item.descr).replace(/['"]+/g, '') %> </p>
-                            <p class="item-price"> R <%= Number(item.price).toFixed(2) %> </p>
-                            <a name="" id="" class="btn btn-danger" role="button" style="color: white"> Delete Post </a>
-                        </li>
+                    <li class="img-list-item reactive-img-spacing" data-src="<%= item.imgUrl %>">
+                        <img class="thumbnail reactive-img-height" src="<%= item.imgUrl %>" />
+                        <p class="item-descr margin-sm-top"> <%- String(item.descr).replace(/['"]+/g, '') %> </p>
+                        <p class="item-price"> R <%= Number(item.price).toFixed(2) %> </p>
+                        <a name="" id="" class="btn btn-danger" role="button" style="color: white"> Delete Post </a>
+                    </li>
                     <% }); %>
                 </ul>
             </div>
 
         </div>
     </div>
+    
+
+    <!-- Button trigger modal -->
+   
+    <!-- Modal -->
+    <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                    <div class="modal-header">
+                            <h5 class="modal-title">Upload New Item</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                        </div>
+                <div class="modal-body">
+                    <% include ./partials/uploadImage %>
+                </div>
+                <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save</button>
+                </div> -->
+            </div>
+        </div>
     </div>
-
-
+    
+    <script>
+        $('#exampleModal').on('show.bs.modal', event => {
+            var button = $(event.relatedTarget);
+            var modal = $(this);
+            // Use above variables to manipulate the DOM
+            
+        });
+    </script>
     <script src="/js/jquery-3.4.1.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/lg-thumbnail.min.js"></script>

@@ -12,6 +12,9 @@ $(document).ready(() => {
     fileUploadReader.openFile()
   })
 
+  $('#upload-image-btn').click(() => {
+
+  })
   $('#submit-btn').click(() => {
     if (isSubmissionValid()) {
       let text = descrDOMElement.val()
