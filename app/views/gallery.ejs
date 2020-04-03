@@ -5,6 +5,7 @@
     <title> El Olam Fashion </title>
 
     <% include ./partials/head %>
+    <script src="/js/gallery.js"></script>
 </head>
 
 <body>
@@ -38,7 +39,7 @@
                         <img class="thumbnail reactive-img-height" src="<%= item.imgUrl %>" />
                         <p class="item-descr margin-sm-top"> <%- String(item.descr).replace(/['"]+/g, '') %> </p>
                         <p class="item-price"> R <%= Number(item.price).toFixed(2) %> </p>
-                        <a name="" id="" class="btn btn-danger" role="button" style="color: white"> Delete Post </a>
+                        <a name="" id="" class="btn btn-danger delete-post-btn" role="button" style="color: white"> Delete Post </a>
                     </li>
                     <% }); %>
                 </ul>
