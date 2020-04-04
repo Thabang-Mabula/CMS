@@ -1,4 +1,4 @@
-class FileUploadReader {
+class ImageUploadReader {
   constructor (fileDOMElement) {
     this._fileDOMElement = fileDOMElement
     this._file = new Object()
@@ -48,4 +48,4 @@ class FileUploadReader {
   }
 }
 
-export { FileUploadReader }
+export { ImageUploadReader }
