@@ -44,6 +44,7 @@ class UploadItemController {
         }).catch(() => {
           alert('Upload Unsuccessful')
           this._clearInputs()
+          location.reload()
         })
       }
     })
@@ -61,17 +62,17 @@ class UploadItemController {
     let notifyer = new InvalidInputNotifyer()
 
     if (!this._descrDOMElement.parsley().isValid()) {
-      notifyer.noteInvalidInput(descrDOMElement, 'Please insert text decription 60 characters or less')
+      notifyer.noteInvalidInput(this._descrDOMElement, 'Please insert text decription 60 characters or less')
       isValidSubmission = false
     }
 
     if (!this._priceDOMElement.parsley().isValid()) {
-      notifyer.noteInvalidInput(priceDOMElement, 'Please insert a valid numerical value for the price')
+      notifyer.noteInvalidInput(this._priceDOMElement, 'Please insert a valid numerical value for the price')
       isValidSubmission = false
     }
 
     if (!this._fileInputDOMElement.parsley().isValid()) {
-      notifyer.noteInvalidInput(fileInputDOMElement, 'Please upload a valid image file')
+      notifyer.noteInvalidInput(this._fileInputDOMElement, 'Please upload a valid image file')
       isValidSubmission = false
     }
 
