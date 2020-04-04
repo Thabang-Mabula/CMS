@@ -25,6 +25,7 @@ $(document).ready(() => {
       itemUploader.upload().then(() => {
         alert('Upload Successful')
         clearInputs()
+        location.reload()
       }).catch(() => {
         alert('Upload Unsuccessful')
         clearInputs()
