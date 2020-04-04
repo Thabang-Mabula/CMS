@@ -52,45 +52,4 @@ function parseTupleStringToArray (tupleString) {
   return a
 }
 
-function getDeleteImageLink (imgURL) {
-  let query = {
-    text: 'SELECT (img_delete_url) FROM products WHERE img_url=$1',
-    values: [imgURL]
-  }
-
-  return new Promise((resolve, reject) => {
-    pool
-      .query(query)
-      .then(res => {
-        if (res.rows[0] !== null) {
-          let urlString = res.rows[0].img_delete_url
-          resolve(urlString)
-        } else {
-          reject(new Error('Could not find image link'))
-        }
-      })
-      .catch(err => {
-        reject(new Error(err.stack))
-      })
-  })
-}
-
-function deleteItemEntry (imgUrl) {
-  let query = {
-    text: 'DELETE FROM products WHERE img_url=$1',
-    values: [imgUrl]
-  }
-
-  return new Promise((resolve, reject) => {
-    pool
-      .query(query)
-      .then(res => {
-        resolve(res)
-      })
-      .catch(err => {
-        reject(new Error('Error executing query', err.stack))
-      })
-  })
-}
-
-module.exports = { storeItemInDatabase, retrieveProducts, getDeleteImageLink, deleteItemEntry }
+module.exports = { storeItemInDatabase, retrieveProducts }

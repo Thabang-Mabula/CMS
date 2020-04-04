@@ -1,6 +1,6 @@
 'use strict'
 
-const { uploadItem, deleteItem } = require('../models/manageItems.js')
+const { uploadItem } = require('../models/uploadItems.js')
 
 let express = require('express')
 let mainRouter = express.Router()
@@ -35,15 +35,6 @@ mainRouter.get('/preview/:previewPage', function (req, res) {
 
 mainRouter.post('/api/uploadItem', function (req, res) {
   uploadItem(req.body.descr, req.body.price, req.body.img).then(() => {
-    res.sendStatus(202)
-  }).catch(() => {
-    res.sendStatus(500)
-  })
-})
-
-mainRouter.post('/api/deleteItem', function (req, res) {
-  deleteItem(req.body.imgUrl).then((deleteImageLink) => {
-    res.send(deleteImageLink)
     res.sendStatus(202)
   }).catch(() => {
     res.sendStatus(500)
