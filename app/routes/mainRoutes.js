@@ -14,22 +14,16 @@ app.use(bodyParser.urlencoded({
   extended: false
 }))
 app.use(bodyParser.json())
-mainRouter.get('/', function (req, res) {
-  res.render('home.ejs', { /* data */ })
-  res.status(200)
-})
 
-mainRouter.get('/preview/:previewPage', function (req, res) {
-  if (req.params.previewPage === 'gallery') {
-    retrieveProducts().then((items) => {
-      res.render('gallery.ejs', { title: 'Gallery', items })
-      res.status(200)
-    }).catch((err) => {
-      console.log(err)
-      res.redirect('/')
-      res.status(200)
-    })
-  }
+mainRouter.get('/', function (req, res) {
+  retrieveProducts().then((items) => {
+    res.render('gallery.ejs', { title: 'Gallery', items })
+    res.status(200)
+  }).catch((err) => {
+    console.log(err)
+    res.redirect('/')
+    res.status(200)
+  })
 })
 
 mainRouter.post('/api/uploadItem', function (req, res) {

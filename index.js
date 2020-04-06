@@ -21,13 +21,6 @@ app.use(bodyParser.urlencoded({ limit: '50mb', extended: true, parameterLimit: 5
 var cookieSession = require('cookie-session')
 const { ExpressOIDC } = require('@okta/oidc-middleware')
 
-// session support is required to use ExpressOIDC
-// app.use(session({
-//   secret: process.env.APP_SECRET,
-//   resave: true,
-//   saveUninitialized: false
-// }))
-
 app.use(cookieSession({
   name: 'session',
   keys: [process.env.APP_SECRET],
