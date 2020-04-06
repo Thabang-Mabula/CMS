@@ -17,14 +17,22 @@ let bodyParser = require('body-parser')
 app.use(bodyParser.json({ limit: '50mb' }))
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true, parameterLimit: 50000 }))
 
-const session = require('express-session')
+// const session = require('express-session')
+var cookieSession = require('cookie-session')
 const { ExpressOIDC } = require('@okta/oidc-middleware')
 
 // session support is required to use ExpressOIDC
-app.use(session({
-  secret: process.env.APP_SECRET,
-  resave: true,
-  saveUninitialized: false
+// app.use(session({
+//   secret: process.env.APP_SECRET,
+//   resave: true,
+//   saveUninitialized: false
+// }))
+
+app.use(cookieSession({
+  name: 'session',
+  keys: [process.env.APP_SECRET],
+  // Cookie Options
+  maxAge: 24 * 60 * 60 * 1000 // 24 hours
 }))
 
 const oidc = new ExpressOIDC({
@@ -45,7 +53,7 @@ let port = process.env.PORT
 // app.listen(port)
 
 oidc.on('ready', () => {
-  app.listen(3000, () => console.log(`App started`))
+  app.listen(port, () => console.log(`App started`))
 })
 
 oidc.on('error', err => {

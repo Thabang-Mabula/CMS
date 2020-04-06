@@ -14,7 +14,6 @@ app.use(bodyParser.urlencoded({
   extended: false
 }))
 app.use(bodyParser.json())
-
 mainRouter.get('/', function (req, res) {
   res.render('home.ejs', { /* data */ })
   res.status(200)
