@@ -46,6 +46,7 @@ const oidc = new ExpressOIDC({
 
 // ExpressOIDC will attach handlers for the /login and /authorization-code/callback routes
 app.use(oidc.router)
+app.all('*', oidc.ensureAuthenticated())
 
 app.use('/', mainRouter)
 
