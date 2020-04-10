@@ -23,9 +23,10 @@ const { ExpressOIDC } = require('@okta/oidc-middleware')
 
 app.use(cookieSession({
   name: 'session',
-  keys: [process.env.APP_SECRET],
+  secret: process.env.APP_SECRET,
   // Cookie Options
-  maxAge: 24 * 60 * 60 * 1000 // 24 hours
+  maxAge: 24 * 60 * 60 * 1000, // 24 hours
+  secure: false
 }))
 
 const oidc = new ExpressOIDC({
