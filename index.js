@@ -26,7 +26,8 @@ app.use(cookieSession({
   secret: process.env.APP_SECRET,
   // Cookie Options
   maxAge: 24 * 60 * 60 * 1000, // 24 hours
-  secure: false
+  secure: false,
+  overwrite: true
 }))
 
 const oidc = new ExpressOIDC({
