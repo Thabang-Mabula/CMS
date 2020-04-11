@@ -1,0 +1,14 @@
+.page-center-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.promt-text {
+  text-align: center;
+}
+
+.login-btn { 
+  display: block;
+}
