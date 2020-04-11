@@ -34,7 +34,7 @@ const oidc = new ExpressOIDC({
   issuer: `https://${process.env.AUTH_DOMAIN}/oauth2/default`,
   client_id: `${process.env.CLIENT_ID_AUTH}`,
   client_secret: `${process.env.CLIENT_SECRET_AUTH}`,
-  redirect_uri: `${process.env.BASE_URL}authorization-code/callback`,
+  redirect_uri: `${process.env.BASE_URL}/authorization-code/callback`,
   appBaseUrl: `${process.env.BASE_URL}`,
   scope: 'openid profile'
 })
